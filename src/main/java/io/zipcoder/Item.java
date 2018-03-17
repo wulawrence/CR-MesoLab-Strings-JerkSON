@@ -17,6 +17,9 @@ public class Item {
      */
     public Item(String name, Double price, String type, String expiration){
         this.name = name;
+        if (name.contains("0")){
+            this.name = name.replaceAll("0", "o");
+        }
         this.price = price;
         this.type = type;
         this.expiration = expiration;
