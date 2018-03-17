@@ -29,9 +29,7 @@ public class ItemParser {
                 for (int i = 0; i < keyValuePair.size(); i++) {
                         valuePair = splitStringWithRegexPattern(":", keyValuePair.get(i));
                         valueOfKey = valuePair.get(1).toLowerCase();
-
                         valueOfKeys.add(valueOfKey);
-
                     }
                 Item item = new Item(valueOfKeys.get(0),
                         Double.parseDouble(valueOfKeys.get(1)),
@@ -98,9 +96,9 @@ public class ItemParser {
         } else if (!outputList.get(name).containsKey(price)){
             outputList.get(name).put(price, 1);
             }
-            else {
-            Integer seen = outputList.get(name).get(price);
-            outputList.get(name).put(price, seen + 1);
+        else {
+            Integer alreadyExist = outputList.get(name).get(price);
+            outputList.get(name).put(price, alreadyExist + 1);
             }
     }
 

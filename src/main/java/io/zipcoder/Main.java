@@ -23,13 +23,11 @@ public class Main {
             try {
                 Item item = itemParser.parseStringIntoItem(items);
 
-//                System.out.println(item);
                 groceryList.add(item);
             } catch (ItemParseException iae){
                 errors++;
             }
         }
-//        System.out.println(itemParser.getErrorCount());
         itemParser.buildListToString();
     }
 }
